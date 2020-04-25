@@ -1,0 +1,37 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at https://mozilla.org/MPL/2.0/. */
+.dashed-overlay {
+  border: dashed 4px;
+  background-color: rgba(255,255,255,.8);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+}
+
+.centered-label {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  left: 0;
+  text-align: center;
+  font-size: 36;
+}
+
+.dropping-area {
+  display: inline-block;
+  position: relative;
+}
+
+.invalid {
+  border-color: red;
+  color: red;
+}
+
+.valid {
+  border-color: grey;
+  color: grey;
+}
