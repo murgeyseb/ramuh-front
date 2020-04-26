@@ -1,73 +1,53 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Project Ramuh front-end
 
-Install NodeJS
+This repository contains the Single Page Application front-end of Project Ramuh.
 
-npm install leaflet react react-dom
-npm install react-leaflet
+This project is a work in progress. For more information about Project Ramuh in general, please refer to the [project prologue post](https://murgeyseb.github.io/project/ramuh/2020/04/23/project-ramuh-prologue.html).
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+This application draws a simple graphical representation of a grid model, on a map.
 
-### `npm start`
+To import a grid model, drag and drop a grid file on the map. Countries which grid is described in the file are then emphasized by an overlay on the map.
 
-Runs the app in the development mode.<br />
+![Example of overlay on Nordic32 example file](/doc/images/nordic32-overlay.png)
+*Example of overlay on Nordic32 example file*
+
+## Building the app
+
+Start by downloading project sources:
+
+```bash
+git clone https://github.com/murgeyseb/ramuh-front.git
+```
+
+Create and initialise a **.env** file in main project directory:
+
+```bash
+cd ramuh-front
+echo "REACT_APP_RAMUH_GRID_OVERLAY_PROVIDER_URL=http://localhost:8080/overlay" >> ".env"
+```
+
+For more information about project configuration, see "Configuring the app".
+
+Finally, start the app using **npm**:
+
+```bash
+npm start
+```
+
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+The page will reload if you make edits.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+When running locally, do not forget to enable CORS in yout browser, to allow communication between the application and the back-end components.
 
-### `npm test`
+## Configuring the app
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Following environment variables can/must be set in the project **.env** file.
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+| Variable name | Mandatory | Description |
+| --- | --- | --- |
+| REACT_APP_RAMUH_GRID_OVERLAY_PROVIDER_URL | Yes | Grid overlay provider URL. See [ramuh-grid-overlay-provider](https://github.com/murgeyseb/ramuh-grid-overlay-provider) |
+| REACT_APP_INITIAL_MAP_CENTER_LAT | No | Initial latitude of the center of the map |
+| REACT_APP_INITIAL_MAP_CENTER_LNG | No | Initial longitude of the center of the map |
+| REACT_APP_INITIAL_MAP_ZOOM | No | Initial zoom of the map |
