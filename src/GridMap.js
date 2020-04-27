@@ -6,9 +6,9 @@ import { Map, TileLayer, GeoJSON } from 'react-leaflet'
 
 function GridMap(props) {
   function initialCenter() {
-    var intialLat = process.env.REACT_APP_INITIAL_MAP_CENTER_LAT || 49.8
-    var intialLng = process.env.REACT_APP_INITIAL_MAP_CENTER_LNG || 16.6
-    return [intialLat, intialLng]
+    var initialLat = process.env.REACT_APP_INITIAL_MAP_CENTER_LAT || 49.8
+    var initialLng = process.env.REACT_APP_INITIAL_MAP_CENTER_LNG || 16.6
+    return [initialLat, initialLng]
   }
 
   function initialZoom() {
