@@ -1,8 +1,12 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at https://mozilla.org/MPL/2.0/.
+ */
 const settings = {
-    RAMUH_GRID_OVERLAY_PROVIDER_URL: process.env.REACT_APP_RAMUH_GRID_OVERLAY_PROVIDER_URL,
-    INITIAL_MAP_CENTER_LAT: process.env.REACT_APP_INITIAL_MAP_CENTER_LAT || 49.8,
-    INITIAL_MAP_CENTER_LNG: process.env.REACT_APP_INITIAL_MAP_CENTER_LNG || 16.6,
-    INITIAL_MAP_ZOOM: process.env.REACT_APP_INITIAL_MAP_ZOOM || 4,
+    RAMUH_GRID_OVERLAY_PROVIDER_URL: window.RamuhEnv.RAMUH_GRID_OVERLAY_PROVIDER_URL,
+    INITIAL_MAP_CENTER_LAT: window.RamuhEnv.INITIAL_MAP_CENTER_LAT || 49.8,
+    INITIAL_MAP_CENTER_LNG: window.RamuhEnv.INITIAL_MAP_CENTER_LNG || 16.6,
+    INITIAL_MAP_ZOOM: window.RamuhEnv.INITIAL_MAP_ZOOM || 4,
 }
 
 export default settings
