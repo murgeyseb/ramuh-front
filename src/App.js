@@ -6,6 +6,7 @@ import React, { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import DroppingArea from './DroppingArea.js';
 import GridMap from './GridMap.js';
+import settings from './config.js';
 import './App.css';
 
 function App() {
@@ -14,7 +15,7 @@ function App() {
   function handleDrop(files) {
     let data = new FormData();
     data.append('gridFile', files[0])
-    fetch(process.env.REACT_APP_RAMUH_GRID_OVERLAY_PROVIDER_URL, {
+    fetch(settings.RAMUH_GRID_OVERLAY_PROVIDER_URL, {
       method: 'POST',
       body: data
     })

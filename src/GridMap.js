@@ -4,16 +4,18 @@
  */
 import React from 'react'
 import { Map, TileLayer, GeoJSON } from 'react-leaflet'
+import settings from './config.js'
 
 function GridMap(props) {
   function initialCenter() {
-    var initialLat = process.env.REACT_APP_INITIAL_MAP_CENTER_LAT || 49.8
-    var initialLng = process.env.REACT_APP_INITIAL_MAP_CENTER_LNG || 16.6
+    console.log(window.env)
+    var initialLat = settings.INITIAL_MAP_CENTER_LAT
+    var initialLng = settings.INITIAL_MAP_CENTER_LNG
     return [initialLat, initialLng]
   }
 
   function initialZoom() {
-    return process.env.REACT_APP_INITIAL_MAP_ZOOM || 4
+    return settings.INITIAL_MAP_ZOOM
   }
   
   return (
