@@ -8,7 +8,6 @@ import settings from './config.js'
 
 function GridMap(props) {
   function initialCenter() {
-    console.log(window.env)
     var initialLat = settings.INITIAL_MAP_CENTER_LAT
     var initialLng = settings.INITIAL_MAP_CENTER_LNG
     return [initialLat, initialLng]
